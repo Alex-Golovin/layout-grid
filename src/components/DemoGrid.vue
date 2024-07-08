@@ -71,12 +71,12 @@ function preventCollisionCheck({layout, layoutItem}) {
   <grid-layout
     :layout.sync="layout"
     :col-num="12"
-    :row-height="30"
     :is-draggable="draggable"
     :is-resizable="resizable"
     :vertical-compact="true"
     :prevent-collision="preventCollisionCheck"
     :use-css-transforms="true"
+    :keep-aspect-ratio="true"
     @reset-selected="onResetSelected"
   >
     <grid-item
