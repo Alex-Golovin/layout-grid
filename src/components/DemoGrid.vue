@@ -60,6 +60,11 @@ onMounted(() => {
 onUnmounted(() => {
   document.removeEventListener("keydown", handleEscape)
 })
+
+function preventCollisionCheck({layout, layoutItem}) {
+  // console.log('preventCollisionCheck', layout, layoutItem)
+  return false
+}
 </script>
 
 <template>
@@ -70,6 +75,7 @@ onUnmounted(() => {
     :is-draggable="draggable"
     :is-resizable="resizable"
     :vertical-compact="true"
+    :prevent-collision="preventCollisionCheck"
     :use-css-transforms="true"
     @reset-selected="onResetSelected"
   >
